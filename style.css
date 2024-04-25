@@ -1,0 +1,222 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+body {
+    /* background: #2e364a; */
+}
+
+.heading{
+    margin-top: 50px;
+    padding-top: 10px;
+}
+
+h3{
+    color:  #ff7a57;
+}
+h1{
+    color: #2e364a;
+}
+
+.timeline{
+    position: relative;
+    max-width: 1200px;
+    margin: 100px auto;
+}
+.container{
+    padding: 10px 50px;
+    position: relative;
+    width: 50%;
+    animation: movedown 1s linear forwards;
+    opacity: 0;
+}
+@keyframes movedown {
+    0%{
+        opacity: 1;
+        transform: translateY(-30px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0px);
+    }
+}
+
+
+.container:nth-child(1){
+    animation-delay: 0s;
+}
+.container:nth-child(2){
+    animation-delay: 1s;
+}
+.container:nth-child(3){
+    animation-delay: 2s;
+}
+.container:nth-child(4){
+    animation-delay: 3s;
+}
+.container:nth-child(5){
+    animation-delay: 4s;
+}
+.container:nth-child(6){
+    animation-delay: 5s;
+}
+
+.textbox{
+    padding: 20px 30px;
+    /* background: #fff; */
+    background:   #2e364a;
+    color: white;
+    position: relative;
+    border-radius: 6px;
+    font-size: 15px;
+    box-shadow: 5px 10px #ff7a57;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    
+}
+.textbox:hover{
+    background-color:#ff7a57;
+    transform: scale(1.2);
+    
+}
+
+
+.left-container{
+    left: 0;
+}
+.right-container{
+    left: 50%;
+}
+.container img{
+    position: absolute;
+    width: 40px;
+    border-radius: 50%;
+    right: -20px;
+    top: 32px;
+    z-index: 10;
+}
+.right-container img{
+    left: -20px;
+}
+.timeline::after{
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background:  #ff7a57;
+    top: 0;
+    left: 50%;
+    margin-left:-3px;
+    z-index: -1;
+    animation: moveline 6s linear forwards;
+}
+@keyframes moveline {
+    0%{
+        height: 0;
+    }
+    100%{
+        height: 100%;
+    }
+}
+.textbox h2{
+    font-weight: 600;
+}
+.textbox small{
+    display: inline-block;
+    margin-bottom: 15px;
+}
+.left-container-arrow{
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 28px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 10px solid  #ff7a57;
+    right: -15px;
+}
+.right-container-arrow{
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 28px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid  #ff7a57;
+    left: -15px;
+}
+
+
+@media screen and (max-width:600px) {
+
+    .timeline{
+        margin: 50px auto;
+    }
+    .timeline::after{
+        left: 31px;
+    }
+    .container{
+        width: 100%;
+        padding-left: 80px;
+        padding-right: 25px;
+    }
+    .textbox{
+        font-size: 13px;
+    }
+    .textbox small{
+        margin-bottom: 10px;
+    }
+    .right-container{
+        left: 0;
+    }
+    .left-container img, .right-container img{
+        left: 10px;
+    }
+
+    .left-container-arrow, .right-container arrow{
+        border-right: 15px solid  #ff7a57;
+        border-left: 0;
+        left: -15px;
+    }
+}
+
+
+.typing-animation {
+    overflow: hidden;
+    border-right: .15em solid  #ff7a57;
+    /* Adjust the color and width of the typing cursor */
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: typing 3s steps(30, end), blink-caret .5s step-end infinite alternate;
+}
+
+/* Keyframe animation for typing effect */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+/* Keyframe animation for blinking caret */
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        /* border-color:black; */
+    }
+}
+
+
+
